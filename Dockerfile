@@ -1,3 +1,4 @@
+FROM ubuntu:16.04
 MAINTAINER Nshah14
 
 RUN apt-get update \
@@ -18,7 +19,7 @@ RUN useradd -r -u $EXAMPLE_UID -g $EXAMPLE_GROUP $EXAMPLE_USER
 # Build application
 RUN mkdir /opt/example
 WORKDIR /opt
-RUN git clone -b 0.1.0 https://github.com/nshah14/sample-web-app.git
+RUN git clone  https://github.com/nshah14/sample-web-app.git
 WORKDIR /opt/example
 RUN npm install
 
